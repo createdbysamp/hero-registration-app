@@ -1,0 +1,14 @@
+@using HeroRegistrationForm.ViewModels
+@model HeroRegistrationViewModel
+
+@{
+  ViewData["Title"] = "Registration Successful";
+  @* var vm = Model; *@
+  var heroName = Context.Session.GetString("HeroName");
+  var heroType = Context.Session.GetString("HeroType");
+  var heroLevel = Context.Session.GetString("HeroLevel");
+}
+
+<h1 class="text-success">🎉 Registration Successful 🎉</h1>
+<p>Thank you for registering, <strong>@heroName!</strong></p>
+<span>You are a <strong>@heroType</strong> hero at level: <strong>@heroLevel</strong>!</span>

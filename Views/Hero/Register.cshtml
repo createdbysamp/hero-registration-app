@@ -1,0 +1,41 @@
+@using HeroRegistrationForm.ViewModels
+@model HeroRegistrationViewModel
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hero Registration</title>
+</head>
+
+<body class="bg-dark text-secondary">
+  <form asp-controller="Hero" asp-action="Register" method="post">
+    <div asp-validation-summary="All" class="alert alert-danger @(ViewContext.ModelState.IsValid ? "d-none" : "")"></div>
+
+    <div class="form-group">
+      <label asp-for="Name">Hero Name</label>
+      <input asp-for="Name" type="text" class="form-control" id="Name" aria-describedby="nameHelp" placeholder="Enter Hero's Name">
+      <span asp-validation-for="Name" class="form-text text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label asp-for="HeroType">Hero Type</label>
+      <select asp-for="HeroType" type="text" class="form-control" id="HeroType" placeholder="Type of Hero" asp-items="@(new SelectList(ViewBag.HeroTypes))"></select>
+      <span asp-validation-for="HeroType" class="form-text text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label asp-for="Level">Hero Level</label>
+      <input asp-for="Level" type="number" class="form-control" id="Level" placeholder="Hero's Level">
+      <span asp-validation-for="Level" class="form-text text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label asp-for="Email">Email</label>
+      <input asp-for="Email" type="email" class="form-control" id="Email" placeholder="Enter Hero's Email">
+      <span asp-validation-for="Email" class="form-text text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+  </form>
+</body>
+
+</html>
