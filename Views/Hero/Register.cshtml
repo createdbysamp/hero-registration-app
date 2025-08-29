@@ -12,16 +12,23 @@
 
 <body class="bg-dark text-secondary">
   <form asp-controller="Hero" asp-action="Register" method="post">
-    <div asp-validation-summary="All" class="alert alert-danger @(ViewContext.ModelState.IsValid ? "d-none" : "")"></div>
+    <div asp-validation-summary="All" class="alert alert-danger @(ViewContext.ModelState.IsValid ? "d-none" : "")">
+    </div>
 
     <div class="form-group">
       <label asp-for="Name">Hero Name</label>
-      <input asp-for="Name" type="text" class="form-control" id="Name" aria-describedby="nameHelp" placeholder="Enter Hero's Name">
+      <input asp-for="Name" type="text" class="form-control" id="Name" aria-describedby="nameHelp"
+        placeholder="Enter Hero's Name">
       <span asp-validation-for="Name" class="form-text text-danger"></span>
     </div>
     <div class="form-group">
       <label asp-for="HeroType">Hero Type</label>
-      <select asp-for="HeroType" type="text" class="form-control" id="HeroType" placeholder="Type of Hero" asp-items="@(new SelectList(ViewBag.HeroTypes))"></select>
+      <select asp-for="HeroType" class="form-control" id="HeroType">
+        @foreach (var heroType in ViewBag.HeroTypes)
+        {
+          <option value="@heroType">@heroType</option>
+        }
+      </select>
       <span asp-validation-for="HeroType" class="form-text text-danger"></span>
     </div>
     <div class="form-group">

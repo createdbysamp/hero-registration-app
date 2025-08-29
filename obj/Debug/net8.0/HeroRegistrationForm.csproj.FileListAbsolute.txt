@@ -28,3 +28,4 @@
 /Users/peezyg/Desktop/5-dotnet/HeroRegistrationForm/obj/Debug/net8.0/HeroRegistrationForm.pdb
 /Users/peezyg/Desktop/5-dotnet/HeroRegistrationForm/obj/Debug/net8.0/HeroRegistrationForm.genruntimeconfig.cache
 /Users/peezyg/Desktop/5-dotnet/HeroRegistrationForm/obj/Debug/net8.0/ref/HeroRegistrationForm.dll
+/Users/peezyg/Desktop/5-dotnet/HeroRegistrationForm/obj/Debug/net8.0/HeroRegistrationForm.sourcelink.json
